@@ -1,0 +1,17 @@
+<h3 class="m-5 text-center">Totale foto preferite:{{ fav.length }}</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-4 mb-3" *ngFor="let pic of photos">
+      <div class="card" style="width: 18rem">
+        <img [src]="pic.thumbnailUrl" class="card-img-top" [alt]="pic.title" />
+        <div class="card-body">
+          <h5 class="card-title">{{ pic.title }}</h5>
+          <button (click)="addToFav(pic)" class="btn btn-success me-3">
+            Mi piace
+          </button>
+          <button class="btn btn-danger">Elimina</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
